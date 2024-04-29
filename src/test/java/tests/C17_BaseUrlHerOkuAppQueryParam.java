@@ -1,13 +1,14 @@
 package tests;
 
-import baseUrl.BaseUral_Herokuapp;
+import baseUrl.BaseUrlHerOkuApp;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
-public class C17_BaseUrlHerOkuAppQueryParam extends BaseUral_Herokuapp {
+public class C17_BaseUrlHerOkuAppQueryParam extends BaseUrlHerOkuApp {
 
     /*
      "https://restful-booker.herokuapp.com/booking endpointine
@@ -24,11 +25,11 @@ public class C17_BaseUrlHerOkuAppQueryParam extends BaseUral_Herokuapp {
     @Test
     public void test01(){
 
-        specHerokuapp.pathParam("pp1","booking").queryParam("firstname","Jim");
+        specHerOkuApp.pathParam("pp1","booking").queryParam("firstname","Jim");
 
-        Response response=given().when().spec(specHerokuapp).get("/{pp1}");
+        Response response=given().when().spec(specHerOkuApp).get("/{pp1}");
 
-        response.then().assertThat().statusCode(200);
+        response.then().assertThat().statusCode(200).body("size",equalTo(7));
 
 
     }

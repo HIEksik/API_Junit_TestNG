@@ -1,14 +1,13 @@
 package tests;
 
-import baseUrl.BaseUral_Herokuapp;
-
+import baseUrl.BaseUrlHerOkuApp;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C15_baseUrlHerOkuApp extends BaseUral_Herokuapp {
+public class C15_baseUrlHerOkuApp extends BaseUrlHerOkuApp {
     /*
      //1-  https://restful-booker.herokuapp.com/booking endpointine
  //    bir GET request gonderdigimizde
@@ -20,12 +19,12 @@ public class C15_baseUrlHerOkuApp extends BaseUral_Herokuapp {
     @Test
     public void test01(){
         //1-Endpoint hazırlanır
-        specHerokuapp.pathParam("pp1","booking");
+        specHerOkuApp.pathParam("pp1","booking");
 
         //2-Verilmişse expData hazırlanır.
 
         //3-Dönen Response kaydedilir
-        Response response=given().when().spec(specHerokuapp).get("/{pp1}");
+        Response response=given().when().spec(specHerOkuApp).get("/{pp1}");
 
         //.....Kontrol işlemi
         response.then().assertThat().statusCode(200).body("bookingid", Matchers.hasItem(133));

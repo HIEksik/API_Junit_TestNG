@@ -8,12 +8,12 @@ public class BaseUrl_Jsonplaceholder {
 
 
 
-    protected RequestSpecification jsonplaceholder;
+    protected RequestSpecification spacJsonplaceholder;
 
     @Before
     public void setup(){
 
-        jsonplaceholder=new RequestSpecBuilder().setBaseUri("https://jsonplaceholder.typicode.com").build();
+        spacJsonplaceholder=new RequestSpecBuilder().setBaseUri("https://jsonplaceholder.typicode.com").build();
 
 
 

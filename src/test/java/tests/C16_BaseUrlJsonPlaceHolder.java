@@ -1,9 +1,7 @@
 package tests;
 
-import baseUrl.BaseUral_Herokuapp;
 import baseUrl.BaseUrl_Jsonplaceholder;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
@@ -25,9 +23,9 @@ public class C16_BaseUrlJsonPlaceHolder extends BaseUrl_Jsonplaceholder {
 
    @Test
     public void test01(){
-        jsonplaceholder.pathParam("pp1","posts");
+        spacJsonplaceholder.pathParam("pp1","posts");
 
-       Response response=given().when().spec(jsonplaceholder).get("/{pp1}");
+       Response response=given().when().spec(spacJsonplaceholder).get("/{pp1}");
 
        response.then().assertThat().statusCode(200).body("id",hasSize(100));
 
@@ -35,9 +33,9 @@ public class C16_BaseUrlJsonPlaceHolder extends BaseUrl_Jsonplaceholder {
 
    @Test
     public void test02(){
-       jsonplaceholder.pathParams("pp1","posts","pp2","44");
+       spacJsonplaceholder.pathParams("pp1","posts","pp2","44");
 
-       Response response=given().when().spec(jsonplaceholder).get("/{pp1}/{pp2}");
+       Response response=given().when().spec(spacJsonplaceholder).get("/{pp1}/{pp2}");
 
        response.then().assertThat().statusCode(200).body("title",equalTo("optio dolor molestias sit"));
 
@@ -45,9 +43,9 @@ public class C16_BaseUrlJsonPlaceHolder extends BaseUrl_Jsonplaceholder {
    }
    @Test
     public void test03(){
-       jsonplaceholder.pathParams("pp1","posts","pp2","50");
+       spacJsonplaceholder.pathParams("pp1","posts","pp2","50");
 
-       Response response=given().when().spec(jsonplaceholder).get("/{pp1}/{pp2}");
+       Response response=given().when().spec(spacJsonplaceholder).get("/{pp1}/{pp2}");
 
        response.then().assertThat().statusCode(200).body("title",equalTo("repellendus qui recusandae incidunt voluptates tenetur qui omnis exercitationem"));
 
