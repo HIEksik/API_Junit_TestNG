@@ -2,6 +2,9 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class HerokuAppData {
     /*
      {
@@ -44,4 +47,33 @@ public class HerokuAppData {
         return expectData;
 
     }
+
+    public static Map<String,Object> reqMapBodyOlustur(){
+        Map<String,Object> reqData=new HashMap<>();
+        Map<String,Object> bookingdatesMap=new HashMap<>();
+
+        bookingdatesMap.put("checkin" , "2021-06-01");
+        bookingdatesMap.put("checkout" , "2021-06-10");
+
+        reqData.put("firstname" , "Ahmet");
+        reqData.put("lastname" , "Bulut");
+        reqData.put("totalprice" , 4757.0);
+        reqData.put("depositpaid" , false);
+        reqData.put("bookingdates",bookingdatesMap);
+        reqData.put("additionalneeds" , "wi-fi");
+
+        return reqData;
+
+    }
+
+    public static Map<String,Object> expBodyMapOlustur(){
+
+        Map<String,Object> expBodyMap=new HashMap<>();
+        expBodyMap.put("bookingid",4326.0);
+        expBodyMap.put("bookingid",reqMapBodyOlustur());
+
+        return expBodyMap;
+
+    }
+
 }
