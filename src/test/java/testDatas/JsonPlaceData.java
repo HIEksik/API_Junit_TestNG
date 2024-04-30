@@ -2,6 +2,9 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class JsonPlaceData {
 
       /*
@@ -61,6 +64,21 @@ public class JsonPlaceData {
         return expectedData;
 
 
+    }
+
+    public static Map<String,Object> mapBodyOlustur(){
+
+       Map<String,Object> mapBody=new HashMap<>();
+
+
+        mapBody.put("userId",7.0);
+        mapBody.put("id",70.0);
+       mapBody.put("title","voluptatem laborum magni");
+       mapBody.put("body","sunt repellendus quae\nest asperiores aut deleniti esse accusamus repellendus quia aut\nquia dolorem unde\neum tempora esse dolore");
+
+
+
+       return mapBody;
     }
 
 }
